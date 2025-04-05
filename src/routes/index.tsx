@@ -41,7 +41,7 @@ function RouteComponent() {
 
       {/* Show loading animation or content based on load state */}
       <Show when={isCanvasLoaded()} fallback={<LoadingAnimation />}>
-        <div class={`relative z-10 fade-in w-full`}>
+        <div class={`relative z-11 fade-in w-full`}>
           <h1
             class={clsx(
               ["text-center mb-8 bungee-spice-regular animate-blink",
