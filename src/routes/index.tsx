@@ -27,6 +27,8 @@ function RouteComponent() {
     setIsCanvasLoaded(true);
   };
 
+  console.log(isMobile());  
+
   return (
     <main class="min-h-screen text-primary p-4 relative flex justify-center items-center">
       {/* Background space canvas (always render, but hidden until loaded) */}
@@ -42,8 +44,10 @@ function RouteComponent() {
         <div class={`relative z-10 fade-in w-full`}>
           <h1
             class={clsx(
-              "text-7xl font-bold text-center mb-8 bungee-spice-regular animate-blink",
-              isMobile() && globalGameState() === "playing" && "text-xl mb-2"
+              ["font-bold text-center mb-8 bungee-spice-regular animate-blink",
+              !isMobile() && "text-7xl",
+              isMobile() && globalGameState() !== "playing" && "text-4xl",
+              isMobile() && globalGameState() === "playing" && "text-xl mb-2"]
             )}
           >
             Life Is A Struggle!
