@@ -1,5 +1,8 @@
 import { createSignal, onMount, onCleanup } from 'solid-js';
 
+// Import as a headless component to inject the preload link at build time
+import FontPreloader from "~/components/FontPreloader";
+
 export default function LoadingAnimation() {
   const [dots, setDots] = createSignal(1);
   let intervalId: ReturnType<typeof setInterval>;
@@ -9,6 +12,11 @@ export default function LoadingAnimation() {
     intervalId = setInterval(() => {
       setDots(prev => (prev % 3) + 1);
     }, 500);
+    
+    // Force the browser to load the font early
+    document.fonts.load('1em "Bungee Spice"').catch(err => {
+      console.warn("Font preloading error:", err);
+    });
   });
   
   onCleanup(() => {
@@ -17,6 +25,9 @@ export default function LoadingAnimation() {
   
   return (
     <div class="loading-animation flex flex-col items-center justify-center h-screen w-full">
+      {/* Hidden component that inserts preload links */}
+      <FontPreloader />
+      
       <div class="space-y-8">
         {/* Animated planet */}
         <div class="relative mx-auto w-24 h-24">
