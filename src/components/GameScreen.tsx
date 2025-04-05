@@ -2,7 +2,7 @@
 import { createSignal, createEffect, onMount, onCleanup, on } from "solid-js";
 import { createMediaQuery } from "@solid-primitives/media";
 import type { Career } from "../types";
-import { useKeyboardControls } from "../hooks/useKeyBoardControls"; // Path to Solid hook
+import { useKeyboardControls } from "../hooks/useKeyboardControls"; // Path to Solid hook
 
 interface GameScreenProps {
   career: Career;
