@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme dark {
+  --color-background: hsl(220 10% 10%); /* Very dark grey/off-black */
+  --color-foreground: hsl(180 10% 90%); /* Light cyan/teal text */
+
+  --color-card: hsl(220 10% 15%);
+  --color-card-foreground: hsl(180 10% 90%);
+
+  --color-popover: hsl(220 10% 12%);
+  --color-popover-foreground: hsl(180 10% 90%);
+
+  --color-primary: hsl(270 95% 65%); /* Brighter Teal for dark mode */
+  --color-primary-foreground: hsl(170 90% 10%); /* Dark text on primary */
+
+  --color-secondary: hsl(220 10% 25%); /* Darker grey */
+  --color-secondary-foreground: hsl(180 10% 85%);
+
+  --color-muted: hsl(220 10% 20%);
+  --color-muted-foreground: hsl(180 10% 60%);
+
+  --color-accent: hsl(45 60% 60%); /* Brighter Gold/Yellow */
+  --color-accent-foreground: hsl(45 90% 15%);
+
+  --color-destructive: hsl(15 70% 55%); /* Brighter Rusty Orange */
+  --color-destructive-foreground: hsl(15 20% 98%);
+
+  --color-border: hsl(220 10% 20%);
+  --color-input: hsl(220 10% 20%);
+  --color-ring: hsl(170 60% 50%); /* Teal focus ring */
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-blink {
+  animation: blink 2s ease-in-out infinite;
+}
+
+/* Loading animation keyframes */
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes orbit {
+  0% { transform: rotate(0deg) translateX(3rem) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(3rem) rotate(-360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+.animate-orbit {
+  animation: orbit 4s linear infinite;
+}
+
+/* Loading transition */
+.fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-out {
+  animation: fadeOut 0.4s ease-in-out;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.game-title {
+  text-shadow: 0 0 10px rgba(139, 92, 246, 0.8);
+}
+
+.bungee-spice-regular {
+  font-family: "Bungee Spice", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
