@@ -44,7 +44,7 @@ function RouteComponent() {
         <div class={`relative z-10 fade-in w-full`}>
           <h1
             class={clsx(
-              ["font-bold text-center mb-8 bungee-spice-regular animate-blink",
+              ["text-center mb-8 bungee-spice-regular animate-blink",
               !isMobile() && "text-7xl",
               isMobile() && globalGameState() !== "playing" && "text-4xl",
               isMobile() && globalGameState() === "playing" && "text-xl mb-2"]
