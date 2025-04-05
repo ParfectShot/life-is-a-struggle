@@ -16,6 +16,7 @@
     "@tanstack/solid-router-devtools": "^1.114.1",
     "@types/node": "^22.14.0",
     "@types/three": "^0.175.0",
+    "@vercel/analytics": "^1.5.0",
     "clsx": "^2.1.1",
     "solid-js": "^1.9.5",
     "three": "^0.175.0",

@@ -2,6 +2,7 @@
 import { createHandler, FetchEvent, StartServer } from "@solidjs/start/server";
 import { createMemoryHistory } from "@tanstack/solid-router";
 import { router } from "./router";
+import { Analytics } from "@vercel/analytics/react"
 
 const routerLoad = async (event: FetchEvent) => {
   const url = new URL(event.request.url);
@@ -32,6 +33,7 @@ export default createHandler(
           <body class="dark">
             <div id="app">{children}</div>
             {scripts}
+            <Analytics mode="production" />
           </body>
         </html>
       )}
